@@ -1,0 +1,6 @@
+.DS_Store
+*.tmp
+.AppleDouble
+.LSOverride
+.claude/settings.local.json
+**/.claude/settings.local.json
