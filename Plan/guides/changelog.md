@@ -7,6 +7,55 @@
 
 ---
 
+## 2026-05-24 (세션 4) — 페르소나 이식 사전 검증 + 확장 패치 A 7건 적용 (v0.1 → v0.1.1)
+
+### 배경
+
+`personas/research-strategist-hypothesis.md` v0.1 (persona-system에서 이식)을 실전 의뢰 가동 전 사전 검증.
+
+3단계 절차로 진행:
+1. **사전 정합성 평가** — 5개 점검 항목(역할 일치성·절차 호환성·산출물 정합성·도구 권한·자기진화 호환성)으로 페르소나 vs Plan팀 자산 충돌·갭 식별. Critical 4건 + Major 5건 + Minor 3건 진단.
+2. **드라이런 1차** (페르소나 v0.1 그대로, Bun 입문 학습 자료 가상 의뢰) — Critical 4건 모두 발현·잠재 확인. 추가 갭 G1(소스 분류 축 직교)·G4(§2 3축 분해 불가) 발견. 순기능 G2·G3(페르소나 Voice·step 2가 §3과 자연 정합) 발견.
+3. **확장 패치 A 7건 적용** — 페르소나 파일 1개만 수정 (Plan팀 자산 보존).
+
+### 변경 내역
+
+#### A. 페르소나 v0.1 → v0.1.1 패치 7건
+
+| # | 패치 | 해결 충돌·갭 |
+|---|---|---|
+| A-1 | 산출물 명칭 `research-brief.md` → `search_plan.md`. `templates/search_plan_template.md` 채택 선언 | Critical C1·C2 |
+| A-2 | Tools 재정렬 (NotebookLM·MCP 제거, Notion·domain_profile_reader 추가) | Critical C3 |
+| A-3 | First Principle 섹션 신설 + Algorithm step 1·2·4 inline 마커 부착 가이드 | Critical C4 |
+| A-4 | Algorithm step 6 분할 → step 7 (§7·§9 포함 산출물 작성) + step 8 (Source 핸드오프 + 9-5 환류) | Critical C2 보강 + Major M1·M2·M5 |
+| A-5 | step 4 소스 매핑에 T1/T2/T3 자동 매핑 규칙 + API 컬럼 필수 | 드라이런 추가 갭 G1 |
+| A-6 | step 1 의뢰 분해 §2 3축 강제 (Core decisions / Required facts / Exclusions 최소 1개) | 드라이런 추가 갭 G4 |
+| A-7 | step 3 검증 가능 질문 생성 단계 신설 (Algorithm 6→8단계) — B-6 승격 | Major M3 (§3 누락 시 재작성 트리거) |
+
+#### B. Algorithm 6단계 → 8단계 확장
+1. 의뢰 분해 (3축 강제) / 2. 가설 수립 / **3. 검증 가능 질문 생성 (신규)** / 4. 소스 매핑 (T1/T2/T3) / 5. 검색어 설계 / 6. 신뢰도 평가 기준 / **7. 산출물 작성 (§7·§9 포함) / 8. Source 핸드오프 + 9-5 환류 (신규 분할)**
+
+#### C. 검증 테스트 4 신설
+Meta 섹션 검증 테스트에 **테스트 4 (자기진화 시스템 통합)** 추가 — Gap Report 9-5 수용 가능 여부. Algorithm step 8b로 통과 조건 충족. 실전 1회 후 최종 검증 예정.
+
+#### D. 산출물 명칭 정책 명문화
+페르소나 Output Standards에 **"리서치 브리프는 Source팀 다운스트림 산출물 명칭으로 예약. Plan tier 산출물에는 사용 금지"** 명시. 시스템 전반의 명칭 혼동 방지.
+
+### 시스템 양식 변경 없음
+본 세션은 **페르소나 파일 1개만 수정**. `guides/authoring_guide.md`·`guides/quality_checklist.md`·`templates/search_plan_template.md`·`reference/*` 모두 보존. 페르소나가 기존 양식을 일방 수용하는 구조 — Plan팀 자산 무손상.
+
+### 영향 파일 (세션 4)
+- `personas/research-strategist-hypothesis.md` (v0.1 → v0.1.1)
+- 이 파일 (`guides/changelog.md`)
+
+### 다음 작업
+- 단계 1 정적 정합성 재점검 (즉시 진행)
+- 단계 2 재드라이런 (Bun 주제 동일 가상 의뢰로 갭 해소 측정)
+- 단계 5 저위험 실전 의뢰 1건 (드라이런 통과 시)
+- 실전 1회 후 v0.1.2 패치 검토 — 패치 B·C 우선순위 재조정
+
+---
+
 ## 2026-05-23 (세션 3) — 신규 Plan: Expo CLI 설치 전 준비물
 
 ### 배경
