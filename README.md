@@ -5,8 +5,9 @@
 ## 구조
 - Plan/ — 리서치 계획 수립 팀
   - personas/ — 배치된 페르소나 정의
+- Source/ — 자료 수집 실행 팀
+  - personas/ — 배치된 페르소나 정의
 - Extract/ — (용도 추가 예정)
-- Source/ — (용도 추가 예정)
 
 ## 운영
 - **위치**: ~/work/research/
